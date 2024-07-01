@@ -123,6 +123,13 @@ Node<T> *BST<T>::deleteNode(Node<T> *root, T node)
   return root;
 }
 
+// Public function
+template <class T>
+void BST<T>::deleteMethod(T node)
+{
+  root = deleteNode(root, node);
+}
+
 // Helper function to find min element in binary tree
 template <class T>
 Node<T> *BST<T>::findMin(Node<T> *node)
@@ -156,5 +163,63 @@ bool BST<T>::search(T node)
 }
 
 // In-order Traversal - l, root, right
-// Post-oreder Traversal - l, right, root
+template <class T>
+// Time complexity - O(N)
+// Space complexity - O(N)
+void BST<T>::inOrderHelper(Node<T> *p)
+{
+  if (p != nullptr)
+  {
+    inOrderHelper(p->left);
+    cout << p->data;
+    inOrderHelper(p->right);
+  }
+}
+
+// Public function
+template <class T>
+void BST<T>::inOrder()
+{
+  inOrderHelper(root);
+  cout << endl;
+}
+
 // Pre-order Traversal -  root, l, right
+template <class T>
+void BST<T>::preOrderHelper(Node<T> *p)
+{
+  if (p != nullptr)
+  {
+    cout << p->data << " ";
+    preOrderHelper(p->left);
+    preOrderHelper(p->right);
+  }
+}
+
+template <class T>
+void BST<T>::preOrder()
+{
+  preOrderHelper(Node<T> * p);
+  cout << endl;
+}
+
+// Post-oreder Traversal - l, right, root
+
+template <class T>
+void BST<T>::postOrderHelper(Node<T> *p)
+{
+  if (p != nullptr)
+  {
+    postOrderHelper(p->left);
+    postOrderHelper(p->right);
+    cout << p->data << " ";
+  }
+}
+
+template <class T>
+void BST<T>::postOrder()
+{
+
+  postOrderHelper(Node<T> * p);
+  cout << endl;
+}
