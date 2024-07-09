@@ -35,6 +35,9 @@ public:
   // Find the min diff
   int minDiffInBST(TreeNode *node)
   {
+    // clear values in vector
+    v.clear();
+
     int minVal = INT_MAX;
 
     // Step 1: InorderTraversal
