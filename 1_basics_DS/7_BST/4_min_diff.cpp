@@ -32,6 +32,9 @@ private:
   }
 
 public:
+  // Time Complexity - O(N+N) = O(N)
+  // Space Complexity -  O(N)
+
   // Find the min diff
   int minDiffInBST(TreeNode *node)
   {
