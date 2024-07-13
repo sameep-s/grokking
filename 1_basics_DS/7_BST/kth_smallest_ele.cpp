@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
 // Definition for the TreeNode structure.
@@ -12,27 +13,35 @@ struct TreeNode
 
 class Solution
 {
+private:
+  int result = 0;
+  int count = 0;
+
+  void traverseInOrder(TreeNode *root, int key)
+  {
+    if (!root || count > key)
+      return;
+
+    traverseInOrder(root->left, key);
+
+    count++;
+    if (count == key)
+      result = root->val;
+    return;
+
+    traverseInOrder(root->right, key);
+  }
+
 public:
   // Time complexity - O(N)
-  // Space complexity - O(H) height of tree
+  // Space complexity - O(H)
+  Solution() : count(0), result(0) {};
 
-  int rangeSumBST(TreeNode *root, int L, int R)
+  int kthSmallest(TreeNode *root, int k)
   {
-    // Use BST property if val > R then traverse left else traverse right if equal or in range
-    // go both ways
+    traverseInOrder(root, k);
 
-    // ---------------------------------------------- Base case
-    if (!root)
-      return 0;
-
-    // ---------------------------------------------- Recursive case
-    if (root->val < L) // if val is less than left
-      return rangeSumBST(root->right, L, R);
-
-    if (root->val > R) // if val is greater than right
-      return rangeSumBST(root->left, L, R);
-
-    return root->val + rangeSumBST(root->left, L, R) + rangeSumBST(root->right, L, R);
+    return result;
   }
 };
 
@@ -47,7 +56,7 @@ int main()
   example1->right->right = new TreeNode(18);
 
   Solution solution;
-  cout << solution.rangeSumBST(example1, 7, 15) << endl; // Expected output: 32
+  cout << solution.kthSmallest(example1, 2) << endl;
 
   // Remember to delete allocated memory to prevent memory leaks
   delete example1->right->right;
