@@ -17,6 +17,9 @@ struct TreeNode
 class Solution
 {
 public:
+// Time complexity- O(N)
+// Space complexity- O(H)
+
   int closestValue(TreeNode *root, double target)
   {
     int closestVal = root->val;
@@ -27,7 +30,7 @@ public:
         closestVal = root->val;
       }
 
-      if(root->val > closestVal){
+      if(root->val > target){
         root = root->left;
       }else{
         root = root->right;
