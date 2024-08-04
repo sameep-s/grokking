@@ -40,7 +40,6 @@ public:
   int kthSmallest(TreeNode *root, int k)
   {
     traverseInOrder(root, k);
-
     return result;
   }
 };
