@@ -45,19 +45,23 @@ int HashTable::H(int key) const
 // Defining insertion for separate chaining
 bool HashTable::Insert(const Record &item)
 {
-    int index = H(item.Key);
+    // generate key
+    int idx = H(item.Key);
 
-    // Traverse the chain at the index
-    for (const Record &record : buckets[index])
+    // check if key is already present
+    for (const Record &rcd : buckets[idx])
     {
-        if (record.Key == item.Key)
+        if (rcd.Key == idx)
         {
-            return false; // Key already exists in the chain, cannot insert
+            // if key is already present return false
+            return false;
         }
-    }
 
-    buckets[index].push_back(item);
-    return true;
+        buckets[idx].push_back(item);
+
+        // else return true
+        return true;
+    }
 }
 
 // Defining searching for separate chaining
