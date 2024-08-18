@@ -11,8 +11,6 @@ public:
 
     bool canConstruct(string ransomNote, string magazine)
     {
-        cout << "------------------------------------------------------------------------" << endl;
-
         // Init a ransomNote Freq hashMap
         unordered_map<char, int> charCount;
 
@@ -25,7 +23,6 @@ public:
         // Traverse magazine string
         for (char c : ransomNote)
         {
-            cout << "charCount :" << charCount[c] << endl;
             if (charCount[c] == 0)
                 return false;
             charCount[c]--;
