@@ -31,6 +31,7 @@ public:
 int main()
 {
     Solution sol;
+
     cout << sol.firstUniqChar("apple") << endl; // Expected: 0
     cout << sol.firstUniqChar("abcab") << endl; // Expected: 2
     cout << sol.firstUniqChar("abab") << endl;  // Expected: -1
