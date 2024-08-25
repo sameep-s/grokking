@@ -7,6 +7,9 @@ using namespace std;
 class Solution
 {
 public:
+    // Time complexity - O(N)
+    // Space complexity - O(N)
+
     int remainingGifts(std::vector<int> &gifts, int k)
     {
         // Init a priority queue
@@ -19,7 +22,6 @@ public:
         }
 
         // Iterate for k values
-
         for (int i = 0; i < k; i++)
         {
             int curr = maxHeap.top();
