@@ -6,30 +6,31 @@ using namespace std;
 class Solution
 {
 public:
+    // Time complexity - O(nlogn)
+    // Space complexity - O(N)
     int connectSticks(vector<int> &sticks)
     {
         int cost = 0;
 
         // Init using greater and iterators
-        priority_queue<int, vector<int>, greater<int>> minHeap(sticks.begin(), sticks.end());
+        priority_queue<int, vector<int>, greater<int>> minHeap(sticks.begin(), sticks.end()); // O(nlogn)
 
-        while (minHeap.size() > 1)
+        while (minHeap.size() > 1) // O(3 * (n-1) * logn) // 3 operations each of O(logn) * (n-1) times
         {
             int val1 = minHeap.top();
-            minHeap.pop();
+            minHeap.pop(); // logn
             int val2 = minHeap.top();
             minHeap.pop();
 
             int combined = val1 + val2;
             cost += combined;
 
-            minHeap.push(combined);
+            minHeap.push(combined); // logn
         }
 
         return cost;
     }
 
-    // Time complexity - O(N + N*LogM)
     int connectSticks_MySol(vector<int> &sticks)
     {
         int cost = 0;
