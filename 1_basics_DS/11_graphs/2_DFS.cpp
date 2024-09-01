@@ -18,6 +18,8 @@ public:
         adjList[v2].push_back(v1);
     }
 
+    // Time complexity - O(V)
+    // Space complexity - O(V)
     void DFS(int start)
     {
         vector<bool> visited = vector(vertices, false);

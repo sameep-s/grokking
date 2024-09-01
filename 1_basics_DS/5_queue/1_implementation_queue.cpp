@@ -25,15 +25,13 @@ private:
 
 public:
   // Constructor
-  Queue() : front(nullptr), rear(nullptr), size(0){};
+  Queue() : front(nullptr), rear(nullptr), size(0) {};
 
   // Destructor
   ~Queue()
   {
     while (!isEmpty())
-    {
       dequeue();
-    }
   }
 
   // Enqueue - add in the back
@@ -41,9 +39,7 @@ public:
   {
     Node<T> *newNode = new Node<T>(data);
     if (rear == nullptr)
-    {
       front = rear = newNode;
-    }
     else
     {
       rear->next = newNode;
@@ -91,9 +87,7 @@ public:
   T peek()
   {
     if (front == nullptr)
-    {
       return T();
-    }
 
     return front->data;
   }
@@ -112,7 +106,6 @@ public:
 };
 
 int main()
-
 {
   Queue<int> q;
 
