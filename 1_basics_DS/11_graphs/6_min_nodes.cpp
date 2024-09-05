@@ -7,6 +7,8 @@ using namespace std;
 class Solution
 {
 public:
+    // Time complexity - O(E+N)
+    // Space complexity - O(N)
     vector<int> findSmallestSetOfVertices(int n, vector<vector<int>> &edges)
     {
         unordered_set<int> nodes_with_incoming;
