@@ -108,6 +108,23 @@ public:
     {
         _delete(root, word, 0);
     }
+
+    bool search(string word)
+    {
+        TrieNode *node = root;
+        for (char ch : word)
+        {
+            int idx = ch - 'a';
+
+            if (node->children[idx] == nullptr)
+            {
+                return false;
+            }
+
+            node = node->children[idx];
+        }
+        return node->isEndOfTheWord;
+    }
 };
 
 int main()
