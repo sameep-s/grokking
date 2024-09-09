@@ -14,7 +14,7 @@ class Trie
 {
 private:
     TrieNode *root;
-
+    // Time complexity - (L * 26S)
     bool searchInNode(const string word, TrieNode *node)
     {
         for (int i = 0; i < word.size(); i++)
@@ -83,6 +83,8 @@ public:
         root->insert(word);
     }
 
+    // Time complexity - O(L)
+    // Space complexity - O(M*L) M = total number of trie nodes
     bool search(const std::string &word)
     {
         return root->search(word);
