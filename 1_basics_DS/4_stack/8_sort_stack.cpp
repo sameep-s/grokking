@@ -9,7 +9,6 @@
 
 class Solution
 {
-
 public:
   void sort(stack<int> &stk, int top)
   {
@@ -51,7 +50,6 @@ public:
   // Space complexity - O(2n) = O(n)
   static stack<int> sortStack(stack<int> stk)
   {
-
     if (stk.empty())
       return stk;
 
