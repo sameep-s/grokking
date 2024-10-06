@@ -3,7 +3,7 @@
 #include <vector>
 using namespace std;
 
-// Map is used as cache Dynamic Programming
+// Map is used as cache in Dynamic Programming
 unordered_map<int, int> cache;
 
 // Memoization -> Top-Bottom
