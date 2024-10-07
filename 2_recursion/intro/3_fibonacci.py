@@ -3,10 +3,8 @@ def fibonacci(n, cache):
     if n in cache: 
         return cache[n]
     
-    if(n==0):
-        return 0
-    if(n==1):
-        return 1
+    if(n==0 or n==1):
+        return n
     
     cache[n] = fibonacci(n-1, cache) + fibonacci(n-2, cache)
     return cache[n]
