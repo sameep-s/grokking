@@ -5,6 +5,8 @@ using namespace std;
 class Solution
 {
 public:
+    // Time complexity - O(N)
+    // Space complexity - O(N)
     int calculateFactorial(int num)
     {
         // Base case
