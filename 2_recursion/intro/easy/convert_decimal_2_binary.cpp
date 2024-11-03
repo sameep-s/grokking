@@ -6,6 +6,8 @@ using namespace std;
 class Solution
 {
 public:
+    // Time complexity - logN
+    // Space complexity - logN as space complexity is dependent on max depth of recursion
     string decimalToBinary(int decimal)
     {
         if (decimal == 0)
