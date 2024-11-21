@@ -5,6 +5,8 @@ using namespace std;
 class Solution
 {
 public:
+    // Time complexity - O(Log(N)) binary search
+    // Space complexity - O(Log(N)) binary search
     bool isPerfectSqHelper(int num, int l, int r)
     {
         // Base case
