@@ -4,15 +4,10 @@
 class Solution
 {
 public:
-    vector<vector<int>> generatePascalTriangleRecursive(int numRows)
-    {
-        // Init a vector
-        vector<vector<int>> pt(numRows);
-        }
-
+    //   Time complexity - logO(N^2)
+    //   Space complexity - logO(N^2)
     vector<vector<int>> generatePascalTriangle(int numRows)
     {
-        // Your code here
         vector<vector<int>> pt(numRows);
 
         // Initialize each row with proper size
@@ -54,7 +49,7 @@ void printPascalTriangle(vector<vector<int>> pt)
 int main()
 {
     Solution s;
-    vector<vector<int>> pt = s.generatePascalTriangle(9);
+    vector<vector<int>> pt = s.generatePascalTriangle(12);
 
     printPascalTriangle(pt);
 
