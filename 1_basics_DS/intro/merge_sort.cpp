@@ -1,4 +1,4 @@
-#include <iostream>
+#include <stdio.h>
 #include <vector>
 using namespace std;
 
@@ -6,9 +6,9 @@ using namespace std;
 
 // 1. find mid point and make two arrays left and right, do this recursively till min elements are left
 // 2. start compairing if arr[l] < arr[r] push left[i] and i++ else push right[j] and j++ and k++
-// 3. condition 1 if i and j and both less than size of left and right
-// 4. condition 2 if i > left.size() then push all elements in left in arr
-// 5. condition 3 if j > right.size() then push all elements in right in arr
+// 3. condition 1: if i and j and both less than size of left and right
+// 4. condition 2: if i > left.size() then push all elements in left in arr
+// 5. condition 3: if j > right.size() then push all elements in right in arr
 // 6. these are all the steps in merge sort.
 
 class Solution
@@ -32,26 +32,18 @@ public:
       while (i < left.size() && j < right.size())
       {
         if (left[i] < right[j])
-        {
           arr[k++] = left[i++];
-        }
         else
-        {
           arr[k++] = right[j++];
-        }
       }
 
       // condition 2
       while (i < left.size())
-      {
         arr[k++] = left[i++];
-      }
 
       // condition 3
       while (j < right.size())
-      {
         arr[k++] = right[j++];
-      }
     }
   }
 };
@@ -63,9 +55,8 @@ int main()
   // calling mergeSort method
   Solution::mergeSort(arr);
   for (int val : arr)
-  {
-    cout << val << ", ";
-  }
+    printf("%d ", val);
 
+  printf("\n");
   return 0;
 }
