@@ -102,10 +102,15 @@ vector<pair<int, int>> Graph::get_edges()
 {
     vector<pair<int, int>> edges;
 
-    for (auto &[vertex, neighbours] : adjacencyList)
-        for (auto &x : neighbours)
+    for (const pair<const int, vector<int>> &entries : adjacencyList)
+    {
+        vector<int> neighbours = entries.second;
+        const int vertex = entries.first;
+
+        for (int &x : neighbours)
             if (vertex < x)
                 edges.push_back(make_pair(vertex, x));
+    }
 
     return edges;
 }
