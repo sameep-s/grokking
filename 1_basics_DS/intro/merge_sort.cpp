@@ -46,14 +46,65 @@ public:
         arr[k++] = right[j++];
     }
   }
+
+  static void mergeSort2(vector<int> &arr)
+  {
+    if (arr.size() > 1)
+    {
+      // ------------------------------------------------------ Step 1 calc mid
+      int mid = arr.size() / 2;
+
+      // ------------------------------------------------------ Step 2 create left and right
+      vector<int> left(arr.begin(), arr.begin() + mid);
+      vector<int> right(arr.begin() + mid, arr.end());
+
+      // ------------------------------------------------------ Step 3 recursive call on left and right
+      mergeSort2(left);
+      mergeSort2(right);
+
+      // ------------------------------------------------------ Step 4 Comparisions
+      int i = 0, j = 0, k = 0;
+
+      while (i < left.size() && j < right.size())
+      {
+        if (left[i] < right[j])
+          arr[k++] = left[i++];
+        else
+          arr[k++] = right[j++];
+      }
+
+      // These two conditions are when one of the array is completely filled in above condition
+      while (i < left.size())
+        arr[k++] = left[i++];
+
+      while (j < right.size())
+        arr[k++] = right[j++];
+    }
+  }
 };
 
 int main()
 {
-  vector<int> arr = {12, 11, 13, 5, 6, 200, 0, 321, 0, 333, 99392, 110212, 7};
+  vector<int> arr = {
+
+      12,
+      11,
+      13,
+      5,
+      6,
+      200,
+      0,
+      321,
+      0,
+      333,
+      99392,
+      110212,
+      7
+
+  };
 
   // calling mergeSort method
-  Solution::mergeSort(arr);
+  Solution::mergeSort2(arr);
   for (int val : arr)
     printf("%d ", val);
 
