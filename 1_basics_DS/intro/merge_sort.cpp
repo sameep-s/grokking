@@ -47,6 +47,8 @@ public:
     }
   }
 
+  // Time complexity - O(N*logN)
+  // Space complexity - O(N)
   static void mergeSort2(vector<int> &arr)
   {
     if (arr.size() > 1)
