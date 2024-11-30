@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <stack>
+#include <queue>
 using namespace std;
 
 class Graph
@@ -42,6 +43,36 @@ public:
                 }
         }
     }
+
+    // Time complexity - O(V), where V is no. of vertices
+    // Space complexity - O(V)
+    void BFS(int start)
+    {
+        vector<bool> visited = vector(vertices, false);
+
+        // int stack
+        queue<int> q;
+        q.push(start);
+        visited[start] = true;
+
+        while (!q.empty())
+        {
+            int top = q.front();
+            q.pop();
+
+            vector<int> list = adjList[top];
+
+            cout << top << " ";
+            for (int x : list)
+            {
+                if (!visited[x])
+                {
+                    q.push(x);
+                    visited[x] = true;
+                }
+            }
+        }
+    }
 };
 
 // Depth First Search - DFS
@@ -56,8 +87,13 @@ int main()
     g.addEdge(2, 5);
     g.addEdge(2, 6);
 
-    cout << "DFS Traversal starting from vertex 0: " << endl;
+    cout << "DFS Traversal starting from vertex 0: ";
     g.DFS(0);
+    cout << endl;
+
+    cout << "BFS Traversal starting from vertex 0: ";
+    g.BFS(0);
+    cout << endl;
 
     return 0;
 }
