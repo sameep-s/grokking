@@ -1,4 +1,4 @@
-#include <iostream>
+#include <stdio.h>
 #include <vector>
 using namespace std;
 
@@ -16,10 +16,9 @@ class Solution
 public:
   static vector<int> quickSort(vector<int> &arr)
   {
+    // Return arr
     if (arr.size() <= 1)
-    {
       return arr;
-    }
 
     int pivot = arr[arr.size() / 2];
     vector<int> left, middle, right;
@@ -49,9 +48,9 @@ int main()
   vector<int> sortedArr = Solution::quickSort(arr);
 
   for (int x : sortedArr)
-  {
-    cout << x << " ";
-  }
+    printf("%d ", x);
+
+  printf(".\n");
 
   return 0;
 }
