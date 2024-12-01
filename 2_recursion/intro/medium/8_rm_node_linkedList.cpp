@@ -13,6 +13,8 @@ struct ListNode
 class Solution
 {
 public:
+    // Time complexity - log(N)
+    // Space complexity - log(N)
     ListNode *removeNodes(ListNode *head, int target)
     {
         //   Base case
@@ -59,6 +61,7 @@ int main()
     ListNode *modifiedHead1 = sol.removeNodes(head1, 2);
     std::cout << "Modified Linked List 1: ";
     sol.printLinkedList(modifiedHead1);
+    printf("\n");
 
     // Example 2
     ListNode *head2 = new ListNode(2);
@@ -74,6 +77,7 @@ int main()
     ListNode *modifiedHead2 = sol.removeNodes(head2, 2);
     std::cout << "Modified Linked List 2: ";
     sol.printLinkedList(modifiedHead2);
+    printf("\n");
 
     // Example 3
     ListNode *head3 = new ListNode(1);
@@ -88,6 +92,7 @@ int main()
     ListNode *modifiedHead3 = sol.removeNodes(head3, 2);
     std::cout << "Modified Linked List 3: ";
     sol.printLinkedList(modifiedHead3);
+    printf("\n");
 
     return 0;
 }
