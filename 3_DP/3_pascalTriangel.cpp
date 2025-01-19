@@ -60,7 +60,7 @@ int main()
 {
 
     Solution sol;
-    vector<vector<int>> arr = sol.generateRecursion(10);
+    vector<vector<int>> arr = sol.generateRecursion(5);
 
     sol.printTriangle(arr);
 
