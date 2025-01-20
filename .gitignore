@@ -42,3 +42,13 @@ Makefile
 # Dependency directories
 dependencies/
 libs/
+
+
+# MacOS specific files
+.DS_Store
+.vscode/
+build/
+*.o
+*.exe
+*.out
+*.dYSM
