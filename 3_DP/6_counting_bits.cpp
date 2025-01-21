@@ -6,6 +6,8 @@ using namespace std;
 class Solution
 {
 public:
+  // Time complexity = O(N)
+  // Space complexity = O(N)
   vector<int> countBits(int n)
   {
     vector<int> bits(n + 1);
@@ -27,7 +29,7 @@ public:
 int main()
 {
   Solution sol;
-  vector<int> bitsArr = sol.countBits(5);
+  vector<int> bitsArr = sol.countBits(25);
 
   return 0;
 }
